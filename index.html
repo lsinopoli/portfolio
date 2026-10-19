@@ -32,23 +32,23 @@
         <p class="eyebrow">Instructional Designer</p>
         <h1>Connecting today’s knowledge to tomorrow’s goals.</h1>
         <p class="lead">
-          Hi, I'm Laura. I build learning experiences that turn complex information into clear, engaging content, connecting what people know today to what they need tomorrow. From instructor-led courses to e-learning and onboarding programs, I apply learning science and creativity to make learning practical, memorable, and genuinely useful. 
+          Hi, I'm Laura. I build learning experiences that turn complex information into clear, engaging content, connecting what people know today to what they need tomorrow. From instructor-led courses to e-learning and onboarding programs, I apply learning science and creativity to make learning practical, memorable, and genuinely useful.
         </p>
 
         <ul class="stats">
-  <li>
-    <span class="stat-number" data-target="20" data-suffix="+">20+</span>
-    <span class="stat-label">Courses designed &amp; launched</span>
-  </li>
-  <li>
-    <span class="stat-number" data-target="150" data-suffix="+">150+</span>
-    <span class="stat-label">Learners reached</span>
-  </li>
-  <li>
-    <span class="stat-number" data-target="10" data-suffix=" yrs">10 yrs</span>
-    <span class="stat-label">Years in instructional design</span>
-  </li>
-</ul>
+          <li>
+            <span class="stat-number" data-target="20" data-suffix="+">20+</span>
+            <span class="stat-label">Courses designed &amp; launched</span>
+          </li>
+          <li>
+            <span class="stat-number" data-target="150" data-suffix="+">150+</span>
+            <span class="stat-label">Learners reached</span>
+          </li>
+          <li>
+            <span class="stat-number" data-target="10" data-suffix=" yrs">10 yrs</span>
+            <span class="stat-label">Years in instructional design</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -60,20 +60,19 @@
 
           <!-- Card 1 -->
           <article class="card">
-            <img class="card-img" src="worksample.png" alt="Sample pages from a participant workbook for an instructor-led course" loading="lazy" />
+            <img class="card-img" src="workbooksample.png" alt="Sample pages from a participant workbook for an instructor-led course" loading="lazy" />
             <span class="tag">Instructor-Led Training</span>
             <h3>Participant Workbook</h3>
-            <ul class="case-points">
+            <ul class="case-points" style="margin-bottom: 0;">
               <li><strong>Challenge</strong> Keeping learners engaged and helping them apply new content in the moment.</li>
               <li><strong>Approach</strong> A Canva participant workbook pairing hands-on activities with reflection prompts.</li>
               <li><strong>Result</strong> A more interactive session where learners practiced as they learned.</li>
             </ul>
-            <a href="#" class="card-link">View project →</a>
           </article>
 
           <!-- Card 2 -->
           <article class="card">
-            <video class="card-img" src="vidclip.mp4" autoplay muted loop playsinline></video>
+            <video class="card-img" src="vidclip.mp4" data-loop-end="3" autoplay muted loop playsinline></video>
             <span class="tag">Blended Program</span>
             <h3>Project Title Two</h3>
             <ul class="case-points">
@@ -81,7 +80,7 @@
               <li><strong>Approach</strong> [Describe what you designed and the tools you used.]</li>
               <li><strong>Result</strong> [Describe the outcome, with a number if you have one.]</li>
             </ul>
-            <a href="#" class="card-link">View project →</a>
+            <button class="card-link card-link-btn" data-video="vidclip.mp4">Watch the full video →</button>
           </article>
 
           <!-- Card 3 -->
@@ -158,6 +157,12 @@
       <p class="copyright">© <span id="year"></span> Laura Sinopoli</p>
     </div>
   </footer>
+
+  <!-- Full-video popup -->
+  <dialog id="videoDialog" class="video-dialog">
+    <button class="video-close" aria-label="Close video">×</button>
+    <video id="dialogVideo" controls playsinline></video>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
