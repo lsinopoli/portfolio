@@ -441,44 +441,33 @@ h3 { font-size: 1.2rem; }
 }
 
 /* =========================================================
-   Soft magnify on hover
-   Uses the separate `scale` property, so it never clashes with
-   the lift/pop effects already on the cards, nav links and photo.
+   Magnifier lens: a small round glass that follows the cursor
+   (size and zoom are set at the top of the lens section in script.js)
    ========================================================= */
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .chips li,
-  .tag,
-  .eyebrow,
-  .stat-label,
-  .skill-group h3,
-  .case-points li,
-  .contact-list a,
-  .card-link,
-  .card-link-btn {
-    /* slow ease-back on the way out = the soft, short "tail" */
-    transition: scale 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    transform-origin: center;
-  }
-  .contact-list a,
-  .card-link { display: inline-block; }   /* inline links can't scale */
-  .case-points li,
-  .card-link,
-  .card-link-btn,
-  .eyebrow,
-  .skill-group h3 { transform-origin: left center; }
-
-  .chips li:hover,
-  .tag:hover,
-  .eyebrow:hover,
-  .stat-label:hover,
-  .skill-group h3:hover,
-  .case-points li:hover,
-  .contact-list a:hover,
-  .card-link:hover,
-  .card-link-btn:hover {
-    scale: 1.07;
-    transition-duration: 0.25s;           /* quick, smooth growth */
-  }
+.lens {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  border: 2px solid var(--accent);
+  background: var(--cream);
+  box-shadow: 0 6px 18px rgba(58, 47, 36, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  scale: 0.85;
+  transition: opacity 0.2s ease, scale 0.2s ease;
+  will-change: transform;
+}
+.lens.on { opacity: 1; scale: 1; }
+.lens-world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  pointer-events: none;
 }
 
 /* =========================================================
