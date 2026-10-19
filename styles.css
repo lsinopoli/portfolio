@@ -158,6 +158,7 @@ h3 { font-size: 1.2rem; }
   line-height: 1.1;
 }
 .stat-label { font-size: 0.9rem; color: var(--ink-soft); }
+
 /* Accent line with a note, centered under the stat cards */
 .stat-note {
   display: grid;
@@ -394,26 +395,6 @@ h3 { font-size: 1.2rem; }
 }
 
 /* =========================================================
-   Phones
-   ========================================================= */
-@media (max-width: 640px) {
-  body { background-attachment: scroll; }   /* fixed backgrounds can jump on phones */
-
-  .header-inner { padding: 0 1.1rem; }
-  .logo { font-size: 1rem; }
-  .site-header nav { gap: 0.2rem; }
-  .site-header nav a { font-size: 0.8rem; padding: 0.3rem 0.5rem; }
-
-  .stats { grid-template-columns: 1fr; }
-  .section { padding: 4rem 0; }
-  .hero { padding-top: 8rem; }
-
-  .bio-row { flex-direction: column; align-items: flex-start; gap: 2rem; }
-  .bio-photo { width: 150px; height: 150px; }
-    .stat-note { grid-template-columns: 1rem minmax(0, 1fr) 1rem; gap: 0.75rem; }
-}
-
-/* =========================================================
    "Watch the full video" button + popup
    ========================================================= */
 
@@ -457,4 +438,66 @@ h3 { font-size: 1.2rem; }
   font-size: 1.3rem;
   line-height: 1;
   cursor: pointer;
+}
+
+/* =========================================================
+   Soft magnify on hover
+   Uses the separate `scale` property, so it never clashes with
+   the lift/pop effects already on the cards, nav links and photo.
+   ========================================================= */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .chips li,
+  .tag,
+  .eyebrow,
+  .stat-label,
+  .skill-group h3,
+  .case-points li,
+  .contact-list a,
+  .card-link,
+  .card-link-btn {
+    /* slow ease-back on the way out = the soft, short "tail" */
+    transition: scale 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
+  }
+  .contact-list a,
+  .card-link { display: inline-block; }   /* inline links can't scale */
+  .case-points li,
+  .card-link,
+  .card-link-btn,
+  .eyebrow,
+  .skill-group h3 { transform-origin: left center; }
+
+  .chips li:hover,
+  .tag:hover,
+  .eyebrow:hover,
+  .stat-label:hover,
+  .skill-group h3:hover,
+  .case-points li:hover,
+  .contact-list a:hover,
+  .card-link:hover,
+  .card-link-btn:hover {
+    scale: 1.07;
+    transition-duration: 0.25s;           /* quick, smooth growth */
+  }
+}
+
+/* =========================================================
+   Phones (keep this last so it overrides everything above)
+   ========================================================= */
+@media (max-width: 640px) {
+  body { background-attachment: scroll; }   /* fixed backgrounds can jump on phones */
+
+  .header-inner { padding: 0 1.1rem; }
+  .logo { font-size: 1rem; }
+  .site-header nav { gap: 0.2rem; }
+  .site-header nav a { font-size: 0.8rem; padding: 0.3rem 0.5rem; }
+
+  .stats { grid-template-columns: 1fr; }
+  .section { padding: 4rem 0; }
+  .hero { padding-top: 8rem; }
+
+  .bio-row { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .bio-photo { width: 150px; height: 150px; }
+
+  .stat-note { grid-template-columns: 1rem minmax(0, 1fr) 1rem; gap: 0.75rem; }
 }
