@@ -284,3 +284,10 @@ h3 { font-size: 1.2rem; }
   aspect-ratio: 16 / 10;
   object-fit: cover;               /* crops neatly instead of stretching */
 }
+.site-header nav a,
+.site-header nav a:hover,
+.site-header nav a:focus,
+.site-header nav a:visited {
+  text-decoration: none !important;
+  border-bottom: none;
+}
