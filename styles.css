@@ -318,3 +318,49 @@ h3 { font-size: 1.2rem; }
   .section { padding: 4rem 0; }
   .hero { padding-top: 8rem; }
 }
+
+/* =========================================================
+   "Watch the full video" button + popup
+   ========================================================= */
+
+/* Makes the button look exactly like the "View project →" links */
+.card-link-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.card-link-btn:hover { color: var(--accent); }
+
+.video-dialog {
+  border: 0;
+  padding: 0;
+  width: min(900px, 92vw);
+  border-radius: var(--radius);
+  background: #000;
+  overflow: hidden;
+}
+.video-dialog::backdrop { background: rgba(58, 47, 36, 0.75); }
+.video-dialog video { display: block; width: 100%; }
+.video-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
