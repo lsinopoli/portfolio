@@ -22,8 +22,11 @@ body {
   line-height: 1.65;
   background-color: var(--cream);
   /* Connection lines + lightbulbs, tiled in a slightly darker cream */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' viewBox='0 0 280 280' fill='none' stroke='%23e8dcc2' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 40 L110 110 L200 40 L250 120 L230 210 L140 240 L60 200 L30 40 M110 110 L140 240 M200 40 L230 210'/%3E%3Cg fill='%23e8dcc2' stroke='none'%3E%3Ccircle cx='30' cy='40' r='3.5'/%3E%3Ccircle cx='110' cy='110' r='3.5'/%3E%3Ccircle cx='200' cy='40' r='3.5'/%3E%3Ccircle cx='250' cy='120' r='3.5'/%3E%3Ccircle cx='230' cy='210' r='3.5'/%3E%3Ccircle cx='140' cy='240' r='3.5'/%3E%3Ccircle cx='60' cy='200' r='3.5'/%3E%3C/g%3E%3Cg transform='translate(165 130)'%3E%3Ccircle cx='0' cy='0' r='13'/%3E%3Cpath d='M-6 12 h12 M-5 17 h10 M-3 22 h6 M-3 -4 l3 5 l3 -5'/%3E%3C/g%3E%3Cg transform='translate(55 110) scale(0.7)'%3E%3Ccircle cx='0' cy='0' r='13'/%3E%3Cpath d='M-6 12 h12 M-5 17 h10 M-3 22 h6 M-3 -4 l3 5 l3 -5'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 280px 280px;
+ body {
+  background-color: var(--cream);
+  background-image: url("images/background.png");
+  background-size: 280px 280px; /* adjust to taste, or delete this line to use the image's natural size */
+  background-repeat: repeat;
 }
 
 img { max-width: 100%; display: block; }
