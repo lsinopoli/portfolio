@@ -1,6 +1,5 @@
 :root {
   --cream: #f7f0e1;
-  --cream-deep: #e8dcc2;      /* pattern colour: slightly darker cream */
   --cream-card: #fbf7ec;
   --ink: #3a2f24;
   --ink-soft: #6b5d4d;
@@ -20,12 +19,23 @@ body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: var(--ink);
   line-height: 1.65;
-  background-color: var(--cream);
-  /* Connection lines + lightbulbs, tiled in a slightly darker cream */
- body {
+
+  /* ---- YOUR BACKGROUND IMAGE ----
+     The path is relative to index.html. Change "images/background.png"
+     to match your file's exact name and folder (case-sensitive). */
   background-color: var(--cream);
   background-image: url("images/background.png");
+
+  /* Option A: full illustration that covers the screen (default) */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Option B: repeating tile. Comment out Option A above and use this instead:
+  background-size: 280px 280px;
   background-repeat: repeat;
+  */
 }
 
 img { max-width: 100%; display: block; }
@@ -220,6 +230,7 @@ h3 { font-size: 1.2rem; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
+  body { background-attachment: scroll; } /* fixed backgrounds can jump on phones */
   .site-header nav { gap: 1rem; }
   .site-header nav a { font-size: 0.85rem; }
   .stats { grid-template-columns: 1fr; }
