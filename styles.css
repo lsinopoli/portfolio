@@ -291,3 +291,26 @@ h3 { font-size: 1.2rem; }
   text-decoration: none !important;
   border-bottom: none;
 }
+/* ---------- Case study points on cards ---------- */
+.case-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  flex: 1;                      /* keeps "View project" at the bottom of every card */
+  display: grid;
+  gap: 0.75rem;
+}
+.case-points li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.case-points strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.1rem;
+}
