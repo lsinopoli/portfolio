@@ -36,3 +36,39 @@ if ("IntersectionObserver" in window) {
 
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
+
+//-------------------------numbers animation on stats
+// Count the stat numbers up from 1 when they scroll into view.
+const statNumbers = document.querySelectorAll(".stat-number[data-target]");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function countUp(el) {
+  const target = parseFloat(el.dataset.target);
+  const suffix = el.dataset.suffix || "";
+  const duration = 900; // milliseconds: lower is faster
+  const startTime = performance.now();
+
+  function frame(now) {
+    const progress = Math.min(1, (now - startTime) / duration);
+    const eased = 1 - Math.pow(1 - progress, 3); // starts fast, eases at the end
+    const value = Math.max(1, Math.round(1 + (target - 1) * eased));
+    el.textContent = value + suffix;
+    if (progress < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+if (!reduceMotion && "IntersectionObserver" in window) {
+  const statObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+  statNumbers.forEach((el) => statObserver.observe(el));
+}
