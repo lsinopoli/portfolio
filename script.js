@@ -1,6 +1,8 @@
-// Fade the header bar from solid to 50% transparent as the visitor scrolls down.
+// =========================================================
+// Header: fade the bar from solid to 50% transparent as you scroll
+// =========================================================
 const root = document.documentElement;
-const FADE_DISTANCE = 320;   // px of scrolling until the fade is complete
+const FADE_DISTANCE = 320;    // px of scrolling until the fade is complete
 const MAX_TRANSPARENCY = 0.5; // 50% transparent at the end
 
 function updateHeader() {
@@ -11,7 +13,9 @@ function updateHeader() {
 updateHeader();
 window.addEventListener("scroll", () => requestAnimationFrame(updateHeader), { passive: true });
 
-// Gentle fade-in for sections and cards.
+// =========================================================
+// Gentle fade-in for sections and cards
+// =========================================================
 const revealTargets = document.querySelectorAll(
   ".hero .container > *, .stats li, .section h2, .card, .skill-group"
 );
@@ -34,11 +38,15 @@ if ("IntersectionObserver" in window) {
   revealTargets.forEach((el) => el.classList.add("visible"));
 }
 
+// =========================================================
 // Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+// =========================================================
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-//-------------------------numbers animation on stats
-// Count the stat numbers up from 1 when they scroll into view.
+// =========================================================
+// Stats: count up when they scroll into view
+// =========================================================
 const statNumbers = document.querySelectorAll(".stat-number[data-target]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -68,10 +76,14 @@ if (!reduceMotion && "IntersectionObserver" in window) {
         }
       });
     },
+    { threshold: 0.6 }
+  );
+  statNumbers.forEach((el) => statObserver.observe(el));
+}
 
-    
-    
-    // Loop only a short section of thumbnail videos (e.g. the first 3 seconds).
+// =========================================================
+// Thumbnail videos: loop only a short section (e.g. first 3 seconds)
+// =========================================================
 document.querySelectorAll("video[data-loop-end]").forEach((video) => {
   const start = parseFloat(video.dataset.loopStart || 0);
   const end = parseFloat(video.dataset.loopEnd);
@@ -86,7 +98,9 @@ document.querySelectorAll("video[data-loop-end]").forEach((video) => {
   if (!video.paused) requestAnimationFrame(check);
 });
 
+// =========================================================
 // Full-video popup
+// =========================================================
 const videoDialog = document.getElementById("videoDialog");
 const dialogVideo = document.getElementById("dialogVideo");
 
@@ -96,7 +110,7 @@ function closeVideo() {
   videoDialog.close();
 }
 
-if (videoDialog) {
+if (videoDialog && dialogVideo) {
   document.querySelectorAll("[data-video]").forEach((btn) => {
     btn.addEventListener("click", () => {
       dialogVideo.src = btn.dataset.video;
@@ -107,8 +121,4 @@ if (videoDialog) {
   videoDialog.querySelector(".video-close").addEventListener("click", closeVideo);
   videoDialog.addEventListener("click", (e) => { if (e.target === videoDialog) closeVideo(); });
   videoDialog.addEventListener("cancel", closeVideo); // Esc key
-}
-    { threshold: 0.6 }
-  );
-  statNumbers.forEach((el) => statObserver.observe(el));
 }
