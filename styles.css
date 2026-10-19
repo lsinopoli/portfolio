@@ -87,6 +87,17 @@ h3 { font-size: 1.2rem; }
   font-weight: 600;
   font-size: 1.2rem;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.logo::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: transparent; /* keeps the circle open */
 }
 .site-header nav { display: flex; gap: 1.5rem; }
 .site-header nav a {
