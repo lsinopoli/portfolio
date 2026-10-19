@@ -1,7 +1,7 @@
 :root {
-  --cream: #f7f0e1;           /* main page background */
-  --cream-deep: #e8dcc2;      /* pattern colour (slightly darker cream) */
-  --cream-card: #fbf7ec;      /* cards, stat boxes, chips */
+  --cream: #eee8da;           /* main page background */
+  --cream-deep: #ddd5c1;      /* pattern colour (slightly darker cream) */
+  --cream-card: #f7f3ea;      /* cards, stat boxes, chips */
   --ink: #3a2f24;
   --ink-soft: #6b5d4d;
   --accent: #b8782f;
