@@ -244,8 +244,8 @@ h3 { font-size: 1.2rem; }
   body { background-attachment: scroll; } /* fixed backgrounds can jump on phones */
   .header-inner { padding: 0 1.1rem; }
   .logo { font-size: 1rem; }
-.site-header nav { display: flex; gap: 2.25rem; }
-.site-header nav a {
+  .site-header nav { gap: 1rem; }
+  .site-header nav a { font-size: 1rem;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -254,7 +254,9 @@ h3 { font-size: 1.2rem; }
   border-radius: 999px;
   transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
-.site-header nav a:hover,
+
+/*NAV HOVER*/
+  .site-header nav a:hover,
 .site-header nav a:focus-visible {
   color: var(--accent);
   background: rgba(184, 120, 47, 0.12);
