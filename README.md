@@ -22,3 +22,4 @@ A minimal, single-page portfolio with a cream background, a subtle connection-li
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
 4. Your site will be live at `https://<your-username>.github.io/<repo-name>/`.
+   
