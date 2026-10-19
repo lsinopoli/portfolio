@@ -25,7 +25,6 @@ body {
  body {
   background-color: var(--cream);
   background-image: url("images/background.png");
-  background-size: 280px 280px; /* adjust to taste, or delete this line to use the image's natural size */
   background-repeat: repeat;
 }
 
