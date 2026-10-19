@@ -11,39 +11,41 @@
   --header-alpha: 1;          /* updated by script.js while scrolling */
 }
 
+
 *, *::before, *::after { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-
+ 
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+ 
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: var(--ink);
   line-height: 1.65;
+ 
+  /* ---- YOUR BACKGROUND IMAGE ----
+     The path is relative to index.html. Change "images/background.png"
+     to match your file's exact name and folder (case-sensitive). */
   background-color: var(--cream);
-
-  /* Connection lines + lightbulbs, tiled in a slightly darker cream */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' viewBox='0 0 280 280' fill='none' stroke='%23e8dcc2' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 40 L110 110 L200 40 L250 120 L230 210 L140 240 L60 200 L30 40 M110 110 L140 240 M200 40 L230 210'/%3E%3Cg fill='%23e8dcc2' stroke='none'%3E%3Ccircle cx='30' cy='40' r='3.5'/%3E%3Ccircle cx='110' cy='110' r='3.5'/%3E%3Ccircle cx='200' cy='40' r='3.5'/%3E%3Ccircle cx='250' cy='120' r='3.5'/%3E%3Ccircle cx='230' cy='210' r='3.5'/%3E%3Ccircle cx='140' cy='240' r='3.5'/%3E%3Ccircle cx='60' cy='200' r='3.5'/%3E%3C/g%3E%3Cg transform='translate(165 130)'%3E%3Ccircle cx='0' cy='0' r='13'/%3E%3Cpath d='M-6 12 h12 M-5 17 h10 M-3 22 h6 M-3 -4 l3 5 l3 -5'/%3E%3C/g%3E%3Cg transform='translate(55 110) scale(0.7)'%3E%3Ccircle cx='0' cy='0' r='13'/%3E%3Cpath d='M-6 12 h12 M-5 17 h10 M-3 22 h6 M-3 -4 l3 5 l3 -5'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 280px 280px;
-  background-repeat: repeat;
-
-  /* ---- To use your own image instead, replace the background-image,
-     background-size and background-repeat lines above with:
-
-  background-image: url("background.png");
+  background-image: url("images/background.png");
+ 
+  /* Option A: full illustration that covers the screen (default) */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+ 
+  /* Option B: repeating tile. Comment out Option A above and use this instead:
+  background-size: 280px 280px;
+  background-repeat: repeat;
   */
 }
-
+ 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-
+ 
 .container { width: min(1080px, 100% - 3rem); margin-inline: auto; }
 .container.narrow { width: min(760px, 100% - 3rem); }
-
+ 
 h1, h2, h3 {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;
@@ -54,8 +56,8 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); }
 h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); margin-bottom: 2rem; }
 h3 { font-size: 1.2rem; }
-
-/* ---------- Header (floating rounded bar, fades to 30% transparent) ---------- */
+ 
+/* ---------- Header (fixed, fades to transparent on scroll) ---------- */
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -95,10 +97,10 @@ h3 { font-size: 1.2rem; }
   transition: color 0.2s;
 }
 .site-header nav a:hover { color: var(--accent); }
-
+ 
 /* ---------- Sections ---------- */
 .section { padding: 5.5rem 0; }
-
+ 
 .hero { padding-top: 10rem; }
 .eyebrow {
   text-transform: uppercase;
@@ -109,7 +111,7 @@ h3 { font-size: 1.2rem; }
   margin: 0 0 1rem;
 }
 .lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 62ch; }
-
+ 
 /* ---------- Stats ---------- */
 .stats {
   list-style: none;
@@ -135,7 +137,7 @@ h3 { font-size: 1.2rem; }
   line-height: 1.1;
 }
 .stat-label { font-size: 0.9rem; color: var(--ink-soft); }
-
+ 
 /* ---------- Work cards ---------- */
 .cards {
   display: grid;
@@ -170,7 +172,7 @@ h3 { font-size: 1.2rem; }
 }
 .card-link { font-weight: 600; text-decoration: none; color: var(--ink); }
 .card-link:hover { color: var(--accent); }
-
+ 
 /* ---------- Skills ---------- */
 .skills {
   display: grid;
@@ -186,7 +188,7 @@ h3 { font-size: 1.2rem; }
   padding: 0.35rem 0.9rem;
   font-size: 0.9rem;
 }
-
+ 
 /* ---------- Footer ---------- */
 .footer {
   background: var(--footer-bg);
@@ -220,19 +222,20 @@ h3 { font-size: 1.2rem; }
 .contact-list a { text-decoration: none; color: var(--footer-ink); border-bottom: 1px solid rgba(243, 233, 210, 0.3); }
 .contact-list a:hover { border-color: var(--footer-ink); }
 .copyright { margin-top: 3rem !important; font-size: 0.85rem; }
-
+ 
 /* ---------- Scroll reveal ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
-
+ 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .card, .btn { transition: none; }
 }
-
+ 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
+  body { background-attachment: scroll; } /* fixed backgrounds can jump on phones */
   .header-inner { padding: 0 1.1rem; }
   .logo { font-size: 1rem; }
   .site-header nav { gap: 0.8rem; }
@@ -241,3 +244,4 @@ h3 { font-size: 1.2rem; }
   .section { padding: 4rem 0; }
   .hero { padding-top: 8rem; }
 }
+ 
