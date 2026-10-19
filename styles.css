@@ -75,8 +75,6 @@ h3 { font-size: 1.2rem; }
   background: rgba(238, 232, 218, var(--header-alpha));
   border: 1px solid rgba(58, 47, 36, 0.1);
   box-shadow: 0 6px 24px rgba(58, 47, 36, 0.08);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
 }
 
 /* Name + open circle */
@@ -319,43 +317,4 @@ h3 { font-size: 1.2rem; }
   .stats { grid-template-columns: 1fr; }
   .section { padding: 4rem 0; }
   .hero { padding-top: 8rem; }
-}
-
-/* ---------- Video popup ---------- */
-.card-link-btn {
-  background: none;
-  border: 0;
-  padding: 0;
-  font: inherit;
-  font-weight: 600;
-  color: var(--ink);
-  cursor: pointer;
-  text-align: left;
-}
-.card-link-btn:hover { color: var(--accent); }
-
-.video-dialog {
-  border: 0;
-  padding: 0;
-  width: min(900px, 92vw);
-  border-radius: var(--radius);
-  background: #000;
-  overflow: hidden;
-}
-.video-dialog::backdrop { background: rgba(58, 47, 36, 0.75); }
-.video-dialog video { display: block; width: 100%; }
-.video-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: 0;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.3rem;
-  line-height: 1;
-  cursor: pointer;
 }
