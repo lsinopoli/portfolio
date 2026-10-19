@@ -26,7 +26,7 @@ body {
      The path is relative to index.html. Change "images/background.png"
      to match your file's exact name and folder (case-sensitive). */
   background-color: var(--cream);
-  background-image: url("images/background.png");
+  background-image: url("background.png");
  
   /* Option A: full illustration that covers the screen (default) */
   background-size: cover;
