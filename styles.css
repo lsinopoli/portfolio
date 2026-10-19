@@ -251,3 +251,14 @@ h3 { font-size: 1.2rem; }
   .hero { padding-top: 8rem; }
 }
  
+/* ---------- Card hover pop ---------- */
+.card.reveal,
+.stats li.reveal {
+  transition: opacity 0.7s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.visible:hover,
+.stats li.visible:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(58, 47, 36, 0.14);
+}
