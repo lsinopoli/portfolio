@@ -97,18 +97,12 @@ h3 { font-size: 1.2rem; }
   height: 0.7rem;
   border: 2px solid var(--accent);
   border-radius: 50%;
-  background: transparent; /* keeps the circle open */
-  .logo:hover::before { background: var(--accent); }
+  background: transparent;
+  transition: background 0.25s ease;
 }
-.site-header nav { display: flex; gap: 1.5rem; }
-.site-header nav a {
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  transition: color 0.2s;
+.logo:hover::before {
+  background: var(--accent);
 }
-.site-header nav a:hover { color: var(--accent); }
  
 /* ---------- Sections ---------- */
 .section { padding: 5.5rem 0; }
