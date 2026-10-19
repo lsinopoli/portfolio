@@ -68,6 +68,46 @@ if (!reduceMotion && "IntersectionObserver" in window) {
         }
       });
     },
+
+    
+    
+    // Loop only a short section of thumbnail videos (e.g. the first 3 seconds).
+document.querySelectorAll("video[data-loop-end]").forEach((video) => {
+  const start = parseFloat(video.dataset.loopStart || 0);
+  const end = parseFloat(video.dataset.loopEnd);
+
+  function check() {
+    if (video.currentTime >= end) video.currentTime = start;
+    if (!video.paused) requestAnimationFrame(check);
+  }
+
+  video.addEventListener("loadedmetadata", () => { video.currentTime = start; });
+  video.addEventListener("play", () => requestAnimationFrame(check));
+  if (!video.paused) requestAnimationFrame(check);
+});
+
+// Full-video popup
+const videoDialog = document.getElementById("videoDialog");
+const dialogVideo = document.getElementById("dialogVideo");
+
+function closeVideo() {
+  dialogVideo.pause();
+  dialogVideo.removeAttribute("src");
+  videoDialog.close();
+}
+
+if (videoDialog) {
+  document.querySelectorAll("[data-video]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      dialogVideo.src = btn.dataset.video;
+      videoDialog.showModal();
+      dialogVideo.play();
+    });
+  });
+  videoDialog.querySelector(".video-close").addEventListener("click", closeVideo);
+  videoDialog.addEventListener("click", (e) => { if (e.target === videoDialog) closeVideo(); });
+  videoDialog.addEventListener("cancel", closeVideo); // Esc key
+}
     { threshold: 0.6 }
   );
   statNumbers.forEach((el) => statObserver.observe(el));
