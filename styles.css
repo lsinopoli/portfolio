@@ -158,6 +158,40 @@ h3 { font-size: 1.2rem; }
   line-height: 1.1;
 }
 .stat-label { font-size: 0.9rem; color: var(--ink-soft); }
+/* Accent line with a note, centered under the stat cards */
+.stat-note {
+  display: grid;
+  /* equal-width lines on each side keep the text perfectly centered */
+  grid-template-columns: minmax(1.5rem, 1fr) minmax(0, auto) minmax(1.5rem, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  margin: 2.25rem 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.stat-note span {
+  max-width: 34rem;
+  text-align: center;
+  text-wrap: balance;
+}
+.stat-note::before,
+.stat-note::after {
+  content: "";
+  height: 2px;
+  border-radius: 2px;
+}
+.stat-note::before { background: linear-gradient(to right, transparent, var(--accent)); }
+.stat-note::after  { background: linear-gradient(to left, transparent, var(--accent)); }
+
+/* The two percentages: larger, in the accent colour */
+.stat-note strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--accent);
+}
 
 /* ---------- Work cards ---------- */
 .cards {
@@ -376,6 +410,7 @@ h3 { font-size: 1.2rem; }
 
   .bio-row { flex-direction: column; align-items: flex-start; gap: 2rem; }
   .bio-photo { width: 150px; height: 150px; }
+    .stat-note { grid-template-columns: 1rem minmax(0, 1fr) 1rem; gap: 0.75rem; }
 }
 
 /* =========================================================
