@@ -60,22 +60,25 @@ h3 { font-size: 1.2rem; }
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 50;
-  background: rgba(247, 240, 225, var(--header-alpha));
-  border-bottom: 1px solid rgba(58, 47, 36, calc(var(--header-alpha) * 0.08));
-  transition: background 0.25s ease;
-}
-/* Bring the bar back when someone reaches for it */
-.site-header:hover,
-.site-header:focus-within {
-  --header-alpha: 0.92 !important;
+  padding-top: 14px;
+  pointer-events: none; /* only the rounded bar itself is clickable */
 }
 .header-inner {
-  width: min(1080px, 100% - 3rem);
+  pointer-events: auto;
+  width: min(1080px, 100% - 2rem);
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 60px;
+  padding: 0 1.75rem;
+  border-radius: 999px;
+  /* alpha goes from 1 (solid) to 0.7 (30% transparent) as you scroll */
+  background: rgba(247, 240, 225, var(--header-alpha));
+  border: 1px solid rgba(58, 47, 36, 0.1);
+  box-shadow: 0 6px 24px rgba(58, 47, 36, 0.08);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 .logo {
   font-family: "Fraunces", Georgia, serif;
@@ -231,8 +234,10 @@ h3 { font-size: 1.2rem; }
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
   body { background-attachment: scroll; } /* fixed backgrounds can jump on phones */
-  .site-header nav { gap: 1rem; }
-  .site-header nav a { font-size: 0.85rem; }
+  .header-inner { padding: 0 1.1rem; }
+  .logo { font-size: 1rem; }
+  .site-header nav { gap: 0.8rem; }
+  .site-header nav a { font-size: 0.8rem; }
   .stats { grid-template-columns: 1fr; }
   .section { padding: 4rem 0; }
   .hero { padding-top: 8rem; }
