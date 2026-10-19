@@ -128,8 +128,8 @@ if (videoDialog && dialogVideo) {
 // and magnifies whatever is directly under it (desktop only)
 // =========================================================
 (function () {
-  const LENS_SIZE = 70; // diameter of the circle, in px (change to make it bigger or smaller)
-  const ZOOM = 2.4;     // how much it magnifies
+  const LENS_SIZE = 50; // diameter of the circle, in px (change to make it bigger or smaller)
+  const ZOOM = 1.8;     // how much it magnifies (1.5 = very subtle, 2.5 = strong)
 
   // Only on devices with a real mouse
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
