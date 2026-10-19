@@ -1,7 +1,7 @@
 // Fade the header bar from solid to 30% transparent as the visitor scrolls down.
 const root = document.documentElement;
 const FADE_DISTANCE = 320;   // px of scrolling until the fade is complete
-const MAX_TRANSPARENCY = 0.3; // 30% transparent at the end
+const MAX_TRANSPARENCY = 0.5; // 50% transparent at the end
 
 function updateHeader() {
   const progress = Math.min(1, window.scrollY / FADE_DISTANCE);
