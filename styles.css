@@ -98,6 +98,7 @@ h3 { font-size: 1.2rem; }
   border: 2px solid var(--accent);
   border-radius: 50%;
   background: transparent; /* keeps the circle open */
+  .logo:hover::before { background: var(--accent); }
 }
 .site-header nav { display: flex; gap: 1.5rem; }
 .site-header nav a {
