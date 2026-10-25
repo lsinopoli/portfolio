@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veterans Affairs Canada Project | Laura Sinopoli</title>
+  <meta name="description" content="An instructor-led training package for Veterans Affairs Canada covering strength and conditioning, nutrition and mindset, built with SMEs using ADDIE, SAM and social learning theory." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Styles used only on this project page -->
+  <style>
+    .project-section { margin-top: 3rem; }
+    .project-section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+    .project-section p { color: var(--ink-soft); margin: 0 0 1rem; }
+
+    .outcome-group { margin-bottom: 1.5rem; }
+    .outcome-main {
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 0.75rem;
+    }
+    .outcomes {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .outcomes li {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      align-items: start;
+      gap: 0.75rem;
+      background: var(--cream-card);
+      border: 1px solid rgba(58, 47, 36, 0.08);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.25rem;
+      color: var(--ink-soft);
+    }
+    .outcomes .num {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .practice-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.9rem;
+    }
+    .practice-list li {
+      padding-left: 1.25rem;
+      border-left: 3px solid var(--accent);
+      color: var(--ink-soft);
+    }
+    .practice-list strong { color: var(--ink); }
+
+    .project-hero-img {
+      border-radius: var(--radius);
+      margin: 2rem 0 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Laura Sinopoli</a>
+      <nav aria-label="Primary">
+        <a href="index.html#work">← Back to work</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="container narrow">
+
+        <p class="eyebrow">Instructor-Led Training</p>
+        <h1>Veterans Affairs Canada Project</h1>
+        <p class="lead">
+          A complete instructor-led training package that helps veterans apply strength and conditioning, nutrition and mindset strategies to their lives after service, built in partnership with subject matter experts.
+        </p>
+
+        <img class="project-hero-img" src="workbooksample.png" alt="Sample pages from the participant workbook for the Veterans Affairs Canada project" />
+
+        <!-- Challenge / Approach / Result -->
+        <ul class="case-points" style="margin-top: 2.5rem;">
+          <li><strong>Challenge</strong> Keeping learners engaged and helping them apply new content in the moment.</li>
+          <li><strong>Approach</strong> A training package of instructor slides, a Vyond video and a participant workbook pairing hands-on activities with reflection prompts.</li>
+          <li><strong>Result</strong> A more interactive session where learners practiced as they learned.</li>
+        </ul>
+
+        <!-- Working with SMEs -->
+        <div class="project-section">
+          <h2>Working with subject matter experts</h2>
+          <p>
+            The project began with Veterans Affairs Canada subject matter experts. Before designing anything, I worked with them to understand who the learners were, what they already knew and where the knowledge gaps were, so the training would focus on what veterans actually needed.
+          </p>
+          <ul class="practice-list">
+            <li><strong>Assessing knowledge gaps.</strong> Conversations with the SMEs clarified what learners already knew about training, nutrition and mindset, and where they needed the most support.</li>
+            <li><strong>Agreeing on the approach.</strong> Together we decided how the content would be organized, which formats would serve the learners best, and how the instructor-led sessions would work.</li>
+            <li><strong>Turning expertise into learning.</strong> I translated specialist content into clear learning outcomes and practical activities, and the SMEs reviewed the materials to confirm accuracy.</li>
+          </ul>
+        </div>
+
+        <!-- Intended learning outcomes -->
+        <div class="project-section">
+          <h2>Intended learning outcomes</h2>
+
+          <div class="outcome-group">
+            <p class="outcome-main">1. Understand and apply the Gary Roberts Performance methodology to strength, conditioning and mobility.</p>
+            <ul class="outcomes">
+              <li><span class="num">1.1</span><span>Use the TrainHeroic app to log and track your strength and conditioning sessions.</span></li>
+              <li><span class="num">1.2</span><span>Scale your training to a home or commercial gym with minimal equipment as necessary.</span></li>
+              <li><span class="num">1.3</span><span>Perform various exercises correctly and safely.</span></li>
+            </ul>
+          </div>
+
+          <div class="outcome-group">
+            <p class="outcome-main">2. Build your nutrition foundation and deep dive into periodized and goal-oriented nutritional planning.</p>
+            <ul class="outcomes">
+              <li><span class="num">2.1</span><span>Analyze your current food intake and apply basic nutritional principles to enhance overall health and longevity.</span></li>
+              <li><span class="num">2.2</span><span>Understand how to fuel for performance and optimize your carbohydrate intake around training days.</span></li>
+              <li><span class="num">2.3</span><span>Examine ways to optimize your nutrition for your goals, such as strength and hypertrophy and body composition.</span></li>
+              <li><span class="num">2.4</span><span>Identify adaptations to your nutrition strategies to account for your current stressors, lifestyle and schedule.</span></li>
+            </ul>
+          </div>
+
+          <div class="outcome-group">
+            <p class="outcome-main">3. Recognize a growth mindset and apply the EAF Framework.</p>
+            <ul class="outcomes">
+              <li><span class="num">3.1</span><span>Apply the EAF (effort, attitude and opportunity) framework to your life after service.</span></li>
+              <li><span class="num">3.2</span><span>Build on practical tools such as goal-setting, habit stacking and building a high-performance identity in civilian life.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="project-section">
+          <h2>Resources I created</h2>
+          <ul class="practice-list">
+            <li><strong>Animated video (Vyond).</strong> A short animated video that introduces key ideas visually and gives learners a clear, engaging way into the content.</li>
+            <li><strong>PowerPoint slides for instructors.</strong> A slide deck that guides the instructor through each session, so delivery is consistent and keeps to the learning outcomes.</li>
+            <li><strong>Participant workbook.</strong> A workbook that follows along with the slides, with hands-on activities and reflection prompts so learners practice and apply ideas during the session.</li>
+          </ul>
+        </div>
+
+        <!-- Content organization and engagement -->
+        <div class="project-section">
+          <h2>How I organized the content and built learner engagement</h2>
+          <ul class="practice-list">
+            <li><strong>Chunking.</strong> I divided the content into three focused topics (training, nutrition and mindset) and broke each into smaller segments tied to a single outcome, so learners could take in one idea at a time and the sessions stayed manageable.</li>
+            <li><strong>Dual coding.</strong> The video, slides and workbook pair visuals with concise text, so learners can connect each idea to an image as well as words, which supports understanding and recall.</li>
+            <li><strong>Aligned resources.</strong> The slides and workbook follow the same order, so learners always know where they are and the materials reinforce each other.</li>
+            <li><strong>Active practice and reflection.</strong> Activities and prompts ask learners to apply each idea to their own training, nutrition and life after service, which makes the content personally relevant.</li>
+          </ul>
+        </div>
+
+        <!-- Learning theory and process -->
+        <div class="project-section">
+          <h2>Learning theory and design process</h2>
+          <ul class="practice-list">
+            <li><strong>ADDIE.</strong> I used ADDIE to give the project a clear structure: analyzing the learners and gaps with the SMEs, designing outcomes and activities, developing the video, slides and workbook, delivering through instructor-led sessions, and evaluating what worked.</li>
+            <li><strong>SAM (Successive Approximation Model).</strong> I built and shared early drafts for review, then refined them across several rounds of feedback from the SMEs, so the materials improved step by step instead of waiting for one final review.</li>
+            <li><strong>Social learning theory.</strong> The instructor-led format lets learners learn from the facilitator and from each other through discussion, shared experience and peer examples, which is especially valuable for a group of veterans moving into civilian life.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 3rem;">
+          <a class="btn" href="index.html#work">← Back to all work</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
