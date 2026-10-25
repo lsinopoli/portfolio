@@ -122,7 +122,7 @@ if (videoDialog && dialogVideo) {
   videoDialog.addEventListener("click", (e) => { if (e.target === videoDialog) closeVideo(); });
   videoDialog.addEventListener("cancel", closeVideo); // Esc key
 }
- =========================================================
+ // =========================================================
 // Custom cursor: a small connection dot in the accent colour
 // (desktop with a mouse only; it grows into an open circle over links)
 // =========================================================
