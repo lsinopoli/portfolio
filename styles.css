@@ -517,14 +517,14 @@ h3 { font-size: 1.2rem; }
   border: 2px solid var(--accent);
   box-shadow: 0 16px 36px rgba(184, 120, 47, 0.18);
   width: 100%;                         /* fills the row, up to the max below */
-  max-width: 700px;                    /* lower this number for narrower */
+  max-width: 900px;                    /* lower this number for narrower */
   margin-inline: auto;                 /* keeps it centered */
 }
 .card-featured .media-link { height: 100%; }
 .card-featured .card-img {
   width: 100%;
   height: 100%;
-  min-height: 280px;
+  min-height: 220px;
   margin: 0;
   aspect-ratio: auto;
 }
