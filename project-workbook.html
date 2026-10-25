@@ -64,6 +64,23 @@
       margin: 2rem 0 0;
       width: 100%;
     }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .sample-grid img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(58, 47, 36, 0.12);
+      box-shadow: 0 6px 18px rgba(58, 47, 36, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .sample-grid a:hover img {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 26px rgba(58, 47, 36, 0.16);
+    }
   </style>
 </head>
 <body>
@@ -97,6 +114,26 @@
           <li><strong>Approach</strong> Designed supplemental study resources that chunk content to manage cognitive load, pair visuals with text (dual coding), and scaffold from guided to independent practice.</li>
           <li><strong>Result</strong> Students gained a flexible, self-paced way to review and reinforce lab learning between sessions.</li>
         </ul>
+
+        <!-- Lab samples -->
+        <div class="project-section">
+          <h2>Lab samples</h2>
+          <div class="sample-grid">
+            <a href="lab1.png" target="_blank" rel="noopener"><img src="lab1.png" alt="Sample page 1 from the anatomy lab study resources" loading="lazy" /></a>
+            <a href="lab2.png" target="_blank" rel="noopener"><img src="lab2.png" alt="Sample page 2 from the anatomy lab study resources" loading="lazy" /></a>
+            <a href="lab3.png" target="_blank" rel="noopener"><img src="lab3.png" alt="Sample page 3 from the anatomy lab study resources" loading="lazy" /></a>
+          </div>
+        </div>
+
+        <!-- Pre-lab slide samples -->
+        <div class="project-section">
+          <h2>Pre-lab slide samples</h2>
+          <div class="sample-grid">
+            <a href="prelab1.png" target="_blank" rel="noopener"><img src="prelab1.png" alt="Pre-lab slide 1 from the anatomy lab" loading="lazy" /></a>
+            <a href="prelab2.png" target="_blank" rel="noopener"><img src="prelab2.png" alt="Pre-lab slide 2 from the anatomy lab" loading="lazy" /></a>
+            <a href="prelab3.png" target="_blank" rel="noopener"><img src="prelab3.png" alt="Pre-lab slide 3 from the anatomy lab" loading="lazy" /></a>
+          </div>
+        </div>
 
         <!-- Intended learning outcomes -->
         <div class="project-section">
