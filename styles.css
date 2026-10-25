@@ -441,35 +441,49 @@ h3 { font-size: 1.2rem; }
 }
 
 /* =========================================================
-   Magnifier lens: a small round glass that follows the cursor
-   (size and zoom are set at the top of the lens section in script.js)
+   Custom cursor: a small connection dot in the accent colour
    ========================================================= */
-.lens {
+@media (hover: hover) and (pointer: fine) {
+  html.has-dot-cursor,
+  html.has-dot-cursor * { cursor: none; }
+
+  /* the video popup keeps the normal cursor, since the dot sits behind it */
+  html.has-dot-cursor .video-dialog,
+  html.has-dot-cursor .video-dialog * { cursor: auto; }
+  html.has-dot-cursor .video-close { cursor: pointer; }
+}
+
+.cursor-dot {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 200;
-  box-sizing: border-box;
+  z-index: 300;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  overflow: hidden;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(184, 120, 47, 0);
   pointer-events: none;
-  background: var(--cream);
-  /* no border: the edge fades out softly instead */
-  -webkit-mask-image: radial-gradient(circle closest-side, #000 45%, rgba(0, 0, 0, 0) 100%);
-  mask-image: radial-gradient(circle closest-side, #000 45%, rgba(0, 0, 0, 0) 100%);
   opacity: 0;
-  scale: 0.9;
-  transition: opacity 0.25s ease, scale 0.25s ease;
-  will-change: transform;
+  transform: translate(-100px, -100px) translate(-50%, -50%);
+  /* position is set directly by script.js, so only the look is animated */
+  transition: width 0.22s ease, height 0.22s ease, background 0.22s ease,
+              box-shadow 0.22s ease, opacity 0.2s ease;
 }
-.lens.on { opacity: 1; scale: 1; }
-.lens-world {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform-origin: 0 0;
-  pointer-events: none;
+.cursor-dot.on { opacity: 1; }
+
+/* Over links and buttons: the dot opens into a soft ring */
+.cursor-dot.is-link {
+  width: 34px;
+  height: 34px;
+  background: rgba(184, 120, 47, 0.14);
+  box-shadow: 0 0 0 1.5px var(--accent);
 }
+
+/* While clicking: it squeezes slightly */
+.cursor-dot.is-down { width: 7px; height: 7px; }
+.cursor-dot.is-link.is-down { width: 26px; height: 26px; }
+
 
 /* =========================================================
    Phones (keep this last so it overrides everything above)
