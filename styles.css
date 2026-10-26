@@ -541,7 +541,13 @@ h3 { font-size: 1.2rem; }
 }
 
 @media (max-width: 760px) {
-  .card-featured { grid-template-columns: 1fr; }
-  .card-featured .card-img { min-height: 0; aspect-ratio: 16 / 10; }
+  /* Stack image above text. Flex (not grid) avoids Safari stretching the image over the text. */
+  .card-featured { display: flex; flex-direction: column; }
+  .card-featured .card-img {
+    height: auto;          /* undo the desktop height: 100% so the image keeps its own height */
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    flex: 0 0 auto;
+  }
   .card-featured .card-body { padding: 1.75rem; }
 }
